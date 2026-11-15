@@ -2,14 +2,14 @@
 
 > Live aggregator powered by GitHub Actions, TypeScript, APIs & HTML Scrapers.
 
-**Last Checked:** `Sun, 15 Nov 2026 21:10:38 GMT`  
-**Active Positions Found:** `0`
+**Last Checked:** `Sun, 15 Nov 2026 21:13:13 GMT`  
+**Active Positions Found:** `1`
 
 ---
 
 | Status | Company | Role / Title | Direct Apply |
 | :---: | :--- | :--- | :---: |
-| — | No matching roles found at this moment. Check back tomorrow! | — | — |
+| 🔥 **NEW** | **dscout** | Software Engineer - India | [Apply Here](https://job-boards.greenhouse.io/dscout/jobs/4370266009) |
 
 
 ---  
