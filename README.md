@@ -1,16 +1,16 @@
 # 🎯 Personal Automated Career Portal
 
-> Live aggregator powered by GitHub Actions, TypeScript, APIs & HTML Scrapers.
+> Live aggregator powered by GitHub Actions, TypeScript, ATS APIs, YC & Paginated Scrapers.
 
-**Last Checked:** `Sun, 15 Nov 2026 21:32:41 GMT`  
+**Last Checked:** `Sun, 15 Nov 2026 21:42:17 GMT`  
 **Active Positions Found:** `2`
 
 ---
 
-| Status | Company | Role / Title | Direct Apply |
-| :---: | :--- | :--- | :---: |
-| ✅ Active | **dscout** | Software Engineer - India | [Apply Here](https://job-boards.greenhouse.io/dscout/jobs/4370266009) |
-| 🔥 **NEW** | **stripe** | Developer blog | [Apply Here](https://stripe.dev/) |
+| Status | Company | Role / Title | Location | Type | Direct Apply |
+| :---: | :--- | :--- | :--- | :---: | :---: |
+| ✅ Active | **dscout** | Software Engineer - India | Remote - India | Full-time | [Apply](https://job-boards.greenhouse.io/dscout/jobs/4370266009) |
+| ✅ Active | **stripe** | Developer blog | Remote / Flexible | Full-time | [Apply](https://stripe.dev/) |
 
 
 ---  
