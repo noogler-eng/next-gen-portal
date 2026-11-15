@@ -1,8 +1,9 @@
 export interface CompanyConfig {
   name: string;
-  type: 'greenhouse' | 'lever' | 'html';
+  type: "greenhouse" | "lever" | "html" | "yc";
   identifier?: string;
   url?: string;
+  maxPages?: number; // Optional pagination limit for HTML scrapers (defaults to 5)
 }
 
 export interface Job {
@@ -10,5 +11,7 @@ export interface Job {
   company: string;
   title: string;
   url: string;
+  location?: string;
+  jobType?: string;
   isNew?: boolean;
 }

@@ -8,5 +8,10 @@
     "name": "stripe",
     "type": "html",
     "url": "https://stripe.com/careers/search"
+  },
+  {
+    "name": "YC Startup",
+    "type": "yc",
+    "url": "https://www.workatastartup.com/companies/example-startup"
   }
 ]
