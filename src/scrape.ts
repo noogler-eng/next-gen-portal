@@ -119,10 +119,19 @@ async function run() {
     fs.readFileSync(COMPANIES_PATH, "utf-8"),
   );
 
-  // Load previously seen job IDs for state tracking
   let seenJobIds: string[] = [];
   if (fs.existsSync(SEEN_JOBS_PATH)) {
-    seenJobIds = JSON.parse(fs.readFileSync(SEEN_JOBS_PATH, "utf-8"));
+    try {
+      const fileContent = fs.readFileSync(SEEN_JOBS_PATH, "utf-8").trim();
+      if (fileContent) {
+        seenJobIds = JSON.parse(fileContent);
+      }
+    } catch (e) {
+      console.warn(
+        "Warning: seen-jobs.json was corrupt or empty, resetting tracking history.",
+      );
+      seenJobIds = [];
+    }
   }
 
   let allJobs: Job[] = [];
