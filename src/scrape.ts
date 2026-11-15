@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as cheerio from "cheerio";
-import { Job, CompanyConfig } from "./interfaces/index";
+import { CompanyConfig, Job } from "./interfaces/index";
 
 const ROOT_DIR = process.cwd();
 const COMPANIES_PATH = path.join(ROOT_DIR, "data", "companies.json");
@@ -193,104 +193,114 @@ async function run() {
     `README updated successfully with ${processedJobs.length} roles.`,
   );
 
-  // 2. Build Interactive index.html Web Dashboard
+  // 2. Build Y Combinator ("Work at a Startup") Styled index.html Dashboard
   const htmlContent = `<!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automated Career Portal</title>
+  <title>Startup Job Board | YC-Style Career Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-indigo-500 selection:text-white">
-  <div class="max-w-6xl mx-auto px-4 py-10">
+<body class="bg-[#f6f6ef] text-[#222222] min-h-screen antialiased">
+  
+  <!-- YC Orange Top Bar -->
+  <div class="bg-[#f16529] h-1.5 w-full"></div>
+
+  <div class="max-w-5xl mx-auto px-4 py-8">
     
     <!-- Header -->
-    <header class="flex flex-col md:flex-row md:items-center md:justify-between border-b border-slate-800 pb-6 mb-8 gap-4">
-      <div>
-        <h1 class="text-3xl font-extrabold tracking-tight text-white flex items-center gap-3">
-          <span>🎯</span> Automated Career Portal
-        </h1>
-        <p class="text-slate-400 text-sm mt-1">Aggregated live from company ATS boards & custom career pages.</p>
+    <header class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-stone-200 pb-6 mb-6 gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-[#f16529] text-white font-bold px-3 py-2 rounded text-lg tracking-wider shadow-sm">YC</div>
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-stone-900">Startup Job Board</h1>
+          <p class="text-stone-500 text-xs mt-0.5">Automated aggregated roles across top startups & tech companies</p>
+        </div>
       </div>
-      <div class="flex items-center gap-4 text-sm text-slate-400 bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl">
-        <div>Total Openings: <span class="font-bold text-indigo-400">${processedJobs.length}</span></div>
-        <div class="w-px h-4 bg-slate-800"></div>
-        <div>Updated: <span class="font-mono text-slate-300">${new Date().toISOString().replace("T", " ").substring(0, 16)} UTC</span></div>
+      <div class="flex items-center gap-3 text-xs text-stone-600 bg-white border border-stone-200 px-3 py-2 rounded-lg shadow-sm">
+        <div>Openings: <span class="font-bold text-stone-900">${processedJobs.length}</span></div>
+        <div class="w-px h-3 bg-stone-200"></div>
+        <div>Updated: <span class="font-mono text-stone-500">${new Date().toISOString().replace("T", " ").substring(0, 16)} UTC</span></div>
       </div>
     </header>
 
-    <!-- Search Input -->
-    <div class="mb-8">
-      <input type="text" id="searchInput" placeholder="Search by company name or job title..." 
-        class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors">
+    <!-- Search Bar (YC Minimalist Style) -->
+    <div class="mb-6">
+      <div class="relative">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-stone-400">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search by company name (e.g. Close, Buffer) or role title..." 
+          class="w-full bg-white border border-stone-300 rounded-lg pl-10 pr-4 py-2.5 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#f16529] focus:ring-1 focus:ring-[#f16529] shadow-sm transition-all">
+      </div>
     </div>
 
-    <!-- Job Table -->
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr class="border-b border-slate-800 bg-slate-900/50 text-slate-400 text-xs uppercase tracking-wider">
-              <th class="py-4 px-6 font-semibold">Status</th>
-              <th class="py-4 px-6 font-semibold">Company</th>
-              <th class="py-4 px-6 font-semibold">Role Title</th>
-              <th class="py-4 px-6 font-semibold text-right">Action</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-800 text-sm">
-            ${
-              processedJobs.length === 0
-                ? `
-              <tr>
-                <td colspan="4" class="py-12 text-center text-slate-500">No matching roles found at this moment. Check back tomorrow!</td>
-              </tr>
-            `
-                : processedJobs
-                    .map(
-                      (job) => `
-              <tr class="hover:bg-slate-800/40 transition-colors job-row">
-                <td class="py-4 px-6 whitespace-nowrap">
-                  ${job.isNew ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">🔥 NEW</span>' : '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">✅ Active</span>'}
-                </td>
-                <td class="py-4 px-6 font-semibold text-white whitespace-nowrap company-name">${job.company}</td>
-                <td class="py-4 px-6 text-slate-300 job-title">${job.title}</td>
-                <td class="py-4 px-6 text-right whitespace-nowrap">
-                  <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-lg shadow-indigo-600/20">
-                    Apply &rarr;
-                  </a>
-                </td>
-              </tr>
-            `,
-                    )
-                    .join("")
-            }
-          </tbody>
-        </table>
+    <!-- Job Listings Container -->
+    <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
+      <div class="divide-y divide-stone-100" id="jobList">
+        ${
+          processedJobs.length === 0
+            ? `
+          <div class="py-16 text-center text-stone-400 text-sm">
+            No matching openings found at this moment. Check back tomorrow!
+          </div>
+        `
+            : processedJobs
+                .map(
+                  (job) => `
+          <div class="p-4 sm:p-5 hover:bg-stone-50/80 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 job-card">
+            
+            <!-- Left Info -->
+            <div class="space-y-1.5 flex-1 min-w-0">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="font-semibold text-stone-900 text-base tracking-tight company-name">${job.company}</span>
+                ${job.isNew ? '<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-orange-50 text-[#f16529] border border-orange-200">NEW</span>' : ""}
+              </div>
+              <div class="text-sm font-medium text-stone-700 job-title">${job.title}</div>
+            </div>
+
+            <!-- Right Action -->
+            <div class="flex items-center gap-3 self-end sm:self-center shrink-0">
+              <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold bg-[#f16529] hover:bg-[#e0561d] text-white transition-colors shadow-sm">
+                Apply &rarr;
+              </a>
+            </div>
+
+          </div>
+        `,
+                )
+                .join("")
+        }
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="mt-12 text-center text-xs text-slate-600">
-      Automated Career Portal &bull; Powered by TypeScript & GitHub Actions
+    <footer class="mt-10 text-center text-xs text-stone-400">
+      Automated Startup Job Portal &bull; Inspired by Y Combinator Design Aesthetic
     </footer>
 
   </div>
 
-  <!-- Realtime Search Script -->
+  <!-- Realtime Filter Script -->
   <script>
     const searchInput = document.getElementById('searchInput');
-    const rows = document.querySelectorAll('.job-row');
+    const jobCards = document.querySelectorAll('.job-card');
 
     searchInput.addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
-      rows.forEach(row => {
-        const company = row.querySelector('.company-name').textContent.toLowerCase();
-        const title = row.querySelector('.job-title').textContent.toLowerCase();
-        row.style.display = (company.includes(term) || title.includes(term)) ? '' : 'none';
+      jobCards.forEach(card => {
+        const company = card.querySelector('.company-name').textContent.toLowerCase();
+        const title = card.querySelector('.job-title').textContent.toLowerCase();
+        if (company.includes(term) || title.includes(term)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   </script>
@@ -298,7 +308,7 @@ async function run() {
 </html>`;
 
   fs.writeFileSync(HTML_PATH, htmlContent, "utf-8");
-  console.log("Successfully generated index.html dashboard.");
+  console.log("Successfully generated YC-styled index.html dashboard.");
 }
 
 run();
