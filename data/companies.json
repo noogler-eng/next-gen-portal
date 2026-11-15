@@ -1,6 +1,7 @@
 [
   { "name": "Buffer", "type": "greenhouse", "identifier": "buffer" },
   { "name": "Close", "type": "lever", "identifier": "close" },
+  {"name": "dscout", "type": "greenhouse", "identifier": "dscout"},
   { "name": "Toggl", "type": "html", "url": "https://toggl.com/jobs/" },
   { "name": "SigNoz", "type": "html", "url": "https://signoz.io/careers/" }
 ]
