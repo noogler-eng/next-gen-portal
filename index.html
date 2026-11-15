@@ -8,58 +8,54 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+  <style> body { font-family: 'Inter', sans-serif; } </style>
 </head>
 <body class="bg-[#f6f6ef] text-[#222222] min-h-screen antialiased">
   
-  <!-- YC Orange Top Bar -->
   <div class="bg-[#f16529] h-1.5 w-full"></div>
 
-  <div class="max-w-5xl mx-auto px-4 py-8">
+  <div class="max-w-6xl mx-auto px-4 py-8">
     
-    <!-- Header -->
     <header class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-stone-200 pb-6 mb-6 gap-4">
       <div class="flex items-center gap-3">
         <div class="bg-[#f16529] text-white font-bold px-3 py-2 rounded text-lg tracking-wider shadow-sm">YC</div>
         <div>
           <h1 class="text-2xl font-bold tracking-tight text-stone-900">Startup Job Board</h1>
-          <p class="text-stone-500 text-xs mt-0.5">Automated aggregated roles across top startups & tech companies</p>
+          <p class="text-stone-500 text-xs mt-0.5">Aggregated roles across top startups, YC companies & tech firms</p>
         </div>
       </div>
       <div class="flex items-center gap-3 text-xs text-stone-600 bg-white border border-stone-200 px-3 py-2 rounded-lg shadow-sm">
         <div>Openings: <span class="font-bold text-stone-900">2</span></div>
         <div class="w-px h-3 bg-stone-200"></div>
-        <div>Updated: <span class="font-mono text-stone-500">2026-11-15 21:32 UTC</span></div>
+        <div>Updated: <span class="font-mono text-stone-500">2026-11-15 21:42 UTC</span></div>
       </div>
     </header>
 
-    <!-- Search Bar (YC Minimalist Style) -->
     <div class="mb-6">
       <div class="relative">
         <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-stone-400">🔍</span>
-        <input type="text" id="searchInput" placeholder="Search by company name (e.g. Close, Buffer) or role title..." 
+        <input type="text" id="searchInput" placeholder="Search by company name, role title, or location..." 
           class="w-full bg-white border border-stone-300 rounded-lg pl-10 pr-4 py-2.5 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#f16529] focus:ring-1 focus:ring-[#f16529] shadow-sm transition-all">
       </div>
     </div>
 
-    <!-- Job Listings Container -->
     <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
       <div class="divide-y divide-stone-100" id="jobList">
         
           <div class="p-4 sm:p-5 hover:bg-stone-50/80 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 job-card">
             
-            <!-- Left Info -->
             <div class="space-y-1.5 flex-1 min-w-0">
               <div class="flex items-center gap-2.5 flex-wrap">
                 <span class="font-semibold text-stone-900 text-base tracking-tight company-name">dscout</span>
                 
               </div>
               <div class="text-sm font-medium text-stone-700 job-title">Software Engineer - India</div>
+              <div class="flex items-center gap-3 text-xs text-stone-500">
+                <span class="bg-stone-100 px-2 py-0.5 rounded text-stone-600 font-medium location-text">📍 Remote - India</span>
+                <span class="bg-stone-100 px-2 py-0.5 rounded text-stone-600 font-medium">Full-time</span>
+              </div>
             </div>
 
-            <!-- Right Action -->
             <div class="flex items-center gap-3 self-end sm:self-center shrink-0">
               <a href="https://job-boards.greenhouse.io/dscout/jobs/4370266009" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold bg-[#f16529] hover:bg-[#e0561d] text-white transition-colors shadow-sm">
                 Apply &rarr;
@@ -70,16 +66,18 @@
         
           <div class="p-4 sm:p-5 hover:bg-stone-50/80 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 job-card">
             
-            <!-- Left Info -->
             <div class="space-y-1.5 flex-1 min-w-0">
               <div class="flex items-center gap-2.5 flex-wrap">
                 <span class="font-semibold text-stone-900 text-base tracking-tight company-name">stripe</span>
-                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-orange-50 text-[#f16529] border border-orange-200">NEW</span>
+                
               </div>
               <div class="text-sm font-medium text-stone-700 job-title">Developer blog</div>
+              <div class="flex items-center gap-3 text-xs text-stone-500">
+                <span class="bg-stone-100 px-2 py-0.5 rounded text-stone-600 font-medium location-text">📍 Remote / Flexible</span>
+                <span class="bg-stone-100 px-2 py-0.5 rounded text-stone-600 font-medium">Full-time</span>
+              </div>
             </div>
 
-            <!-- Right Action -->
             <div class="flex items-center gap-3 self-end sm:self-center shrink-0">
               <a href="https://stripe.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold bg-[#f16529] hover:bg-[#e0561d] text-white transition-colors shadow-sm">
                 Apply &rarr;
@@ -91,14 +89,12 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <footer class="mt-10 text-center text-xs text-stone-400">
-      Automated Startup Job Portal &bull; Inspired by Y Combinator Design Aesthetic
+      Automated Startup Job Portal &bull; Y Combinator Aesthetic & Pagination Enabled
     </footer>
 
   </div>
 
-  <!-- Realtime Filter Script -->
   <script>
     const searchInput = document.getElementById('searchInput');
     const jobCards = document.querySelectorAll('.job-card');
@@ -108,7 +104,8 @@
       jobCards.forEach(card => {
         const company = card.querySelector('.company-name').textContent.toLowerCase();
         const title = card.querySelector('.job-title').textContent.toLowerCase();
-        if (company.includes(term) || title.includes(term)) {
+        const location = card.querySelector('.location-text').textContent.toLowerCase();
+        if (company.includes(term) || title.includes(term) || location.includes(term)) {
           card.style.display = '';
         } else {
           card.style.display = 'none';
