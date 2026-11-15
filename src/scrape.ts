@@ -11,7 +11,7 @@ const HTML_PATH = path.join(ROOT_DIR, "index.html");
 
 // Target filters (adjust regex to match your tech stack & seniority)
 const TITLE_REGEX =
-  /(software engineer|frontend|backend|fullstack|developer|junior)/i;
+  /(software engineer|frontend|backend|fullstack|developer|junior|forward|deployed)/i;
 const EXCLUDE_REGEX = /(senior|staff|lead|principal|director|manager)/i;
 
 // Helper: Resolve relative URLs
