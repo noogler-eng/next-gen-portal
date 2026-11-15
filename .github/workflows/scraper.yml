@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Run TypeScript Scraper
-        run: npx tsx scripts/scrape.ts
+        run: npx tsx src/scrape.ts
 
       - name: Commit and Push Changes if Updated
         run: |

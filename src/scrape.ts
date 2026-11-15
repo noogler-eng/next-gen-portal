@@ -14,15 +14,17 @@ interface JobMatch {
 }
 
 async function runScraper() {
-  const companiesPath = path.join(process.cwd(), "data", "companies.json");
+  const ROOT_DIR = process.cwd();
+  const COMPANIES_PATH = path.join(ROOT_DIR, "data", "companies.json");
+  const README_PATH = path.join(ROOT_DIR, "README.md");
 
-  if (!fs.existsSync(companiesPath)) {
+  if (!fs.existsSync(COMPANIES_PATH)) {
     console.error("companies.json not found!");
     process.exit(1);
   }
 
   const companies: Company[] = JSON.parse(
-    fs.readFileSync(companiesPath, "utf-8"),
+    fs.readFileSync(COMPANIES_PATH, "utf-8"),
   );
   const matchedJobs: JobMatch[] = [];
 
@@ -100,8 +102,7 @@ async function runScraper() {
     }
   }
 
-  const readmePath = path.join(process.cwd(), "README.md");
-  fs.writeFileSync(readmePath, markdown, "utf-8");
+  fs.writeFileSync(README_PATH, markdown, "utf-8");
   console.log(
     `Successfully updated README.md with ${uniqueJobs.length} matches.`,
   );
