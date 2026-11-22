@@ -2,7 +2,7 @@
 
 > Live aggregator powered by GitHub Actions, TypeScript, ATS APIs, YC & Paginated Scrapers.
 
-**Last Checked:** `Sun, 22 Nov 2026 15:44:09 GMT`  
+**Last Checked:** `Sun, 22 Nov 2026 16:08:00 GMT`  
 **Active Positions Found:** `8`
 
 ---
@@ -10,9 +10,9 @@
 | Status | Company | Role / Title | Location | Type | Direct Apply |
 | :---: | :--- | :--- | :--- | :---: | :---: |
 | ✅ Active | **dscout** | Software Engineer - India | Remote - India | Full-time | [Apply](https://job-boards.greenhouse.io/dscout/jobs/4370266009) |
-| 🔥 **NEW** | **Bitgo** | Backend Engineer E2 - Ecosystem | India | Full-time | [Apply](https://job-boards.greenhouse.io/bitgo/jobs/8644530002) |
-| 🔥 **NEW** | **Bitgo** | Backend Engineer E3 - Ecosystem | India | Full-time | [Apply](https://job-boards.greenhouse.io/bitgo/jobs/7344201002) |
-| 🔥 **NEW** | **Bitgo** | Backend Engineer E3 - India | India | Full-time | [Apply](https://job-boards.greenhouse.io/bitgo/jobs/8869949002) |
+| ✅ Active | **Bitgo** | Backend Engineer E2 - Ecosystem | India | Full-time | [Apply](https://job-boards.greenhouse.io/bitgo/jobs/8644530002) |
+| ✅ Active | **Bitgo** | Backend Engineer E3 - Ecosystem | India | Full-time | [Apply](https://job-boards.greenhouse.io/bitgo/jobs/7344201002) |
+| ✅ Active | **Bitgo** | Backend Engineer E3 - India | India | Full-time | [Apply](https://job-boards.greenhouse.io/bitgo/jobs/8869949002) |
 | ✅ Active | **stripe** | Developer blog | Remote / Flexible | Full-time | [Apply](https://stripe.dev/) |
 | ✅ Active | **Peakflo** | Forward Deployed Engineer (FDE) - (India/Remote)IN / Remote (IN)₹1M - ₹1.3M INR1+ yearsApply Now › | Remote | Full-time | [Apply](https://www.ycombinator.com/companies/peakflo/jobs/vIrPzMj-forward-deployed-engineer-fde-india-remote) |
 | ✅ Active | **Peakflo** | Forward Deployed Engineer (FDE) - (India/Remote)IN / Remote (IN)₹1M - ₹1.3M INR1+ years | Remote | Full-time | [Apply](https://www.ycombinator.com/companies/peakflo/jobs/vIrPzMj-forward-deployed-engineer-fde-india-remote) |
