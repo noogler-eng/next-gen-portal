@@ -7,6 +7,62 @@
   { "name": "openfx", "type": "html", "url": "https://www.openfx.com/careers" },
   { "name": "Alaan", "type": "html", "url": "https://www.alaan.com/careers" },
   { "name": "Bitgo", "type": "greenhouse", "identifier": "bitgo" },
+  { "name": "Onenergy", "type": "greenhouse", "identifier": "Onenergy" },
+  {
+    "name": "Syndigo",
+    "type": "html",
+    "url": "https://syndigo.com/open-positions/"
+  },
+  {
+    "name": "Sardine Ai",
+    "type": "html",
+    "url": "https://www.sardine.ai/careers#top"
+  },
+  {
+    "name": "Bitwarden",
+    "type": "html",
+    "url": "https://bitwarden.com/careers/"
+  },
+  {
+    "name": "Gigaenergy",
+    "type": "html",
+    "url": "https://www.gigaenergy.com/careers"
+  },
+  {
+    "name": "Firstwork",
+    "type": "html",
+    "url": "https://www.firstwork.com/careers"
+  },
+  {
+    "name": "Weavegrid",
+    "type": "html",
+    "url": "https://www.weavegrid.com/careers/job-openings"
+  },
+  {
+    "name": "Thinklabs Ai",
+    "type": "html",
+    "url": "https://thinklabs.ai/careers"
+  },
+  {
+    "name": "phaidra",
+    "type": "html",
+    "url": "https://www.phaidra.ai/careers"
+  },
+  {
+    "name": "Emerald Ai",
+    "type": "html",
+    "url": "https://www.emeraldai.co/careers"
+  },
+  {
+    "name": "Nzero",
+    "type": "html",
+    "url": "https://nzero.com/careers/"
+  },
+  {
+    "name": "SafetyWing",
+    "type": "html",
+    "url": "https://safetywing.pinpointhq.com"
+  },
   {
     "name": "Cloudsek",
     "type": "html",
