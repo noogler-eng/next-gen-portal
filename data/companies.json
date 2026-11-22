@@ -4,6 +4,14 @@
   { "name": "dscout", "type": "greenhouse", "identifier": "dscout" },
   { "name": "Toggl", "type": "html", "url": "https://toggl.com/jobs/" },
   { "name": "SigNoz", "type": "html", "url": "https://signoz.io/careers/" },
+  { "name": "openfx", "type": "html", "url": "https://www.openfx.com/careers" },
+  { "name": "Alaan", "type": "html", "url": "https://www.alaan.com/careers" },
+  { "name": "Bitgo", "type": "greenhouse", "identifier": "bitgo" },
+  {
+    "name": "Cloudsek",
+    "type": "html",
+    "url": "https://www.cloudsek.com/openings"
+  },
   {
     "name": "stripe",
     "type": "html",
