@@ -2,7 +2,7 @@
 
 > Live aggregator powered by GitHub Actions, TypeScript, ATS APIs, YC & Paginated Scrapers.
 
-**Last Checked:** `Wed, 25 Nov 2026 18:35:02 GMT`  
+**Last Checked:** `Thu, 26 Nov 2026 18:18:48 GMT`  
 **Active Positions Found:** `10`
 
 ---
